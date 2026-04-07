@@ -1,13 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
 }
+
 body{
-    background-color: #C9D6FF;
-    background: linear-gradient(to right, #E2E2E2, #C9D6FF);
+    background-color: #c9d6ff;
+    background: linear-gradient(to right, #e2e2e2, #c9d6ff);
     display: flex;
     align-items: center;    
     justify-content: center;
@@ -45,10 +47,10 @@ body{
 }
 
 .container button{
-    background-color: #2170d6;
+    background-color: #512da8;
     color: #fff;
     border: 1px solid transparent;
-    padding: 10px 30px;
+    padding: 10px 45px;
     border-radius: 8px;
     cursor: pointer;
     font-size: 12px;
@@ -57,7 +59,6 @@ body{
     letter-spacing: 0.5px;
     text-transform: uppercase;
     margin-top: 10px;
-    cursor: pointer;
 }
 
 .container button.hidden{
@@ -129,18 +130,55 @@ body{
 }
 
 .social-icons{
-    margin: 20px 0;
+    margin: 25px 0;
 }
 
 .social-icons a{
-    border: 1px solid #eee;
-    border-radius: 20%;
+    border: 1px solid #ddd;
+    border-radius: 12px;
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    margin: 0 3px;
-    width: 40px;
-    height: 40px;
+    margin: 0 8px;
+    width: 45px;
+    height: 45px;
+    color: #333;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: #fff;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Brand Colors on Hover */
+.social-icons a:hover {
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.fa-google:hover, .social-icons a:has(.fa-google):hover {
+    background-color: #db4437;
+    border-color: #db4437;
+}
+
+.fa-facebook:hover, .social-icons a:has(.fa-facebook):hover {
+    background-color: #1877f2;
+    border-color: #1877f2;
+}
+
+.fa-twitter:hover, .social-icons a:has(.fa-twitter):hover {
+    background-color: #1da1f2;
+    border-color: #1da1f2;
+}
+
+.fa-github:hover, .social-icons a:has(.fa-github):hover {
+    background-color: #333;
+    border-color: #333;
+}
+
+.fa-linkedin:hover, .social-icons a:has(.fa-linkedin):hover {
+    background-color: #0077b5;
+    border-color: #0077b5;
 }
 
 .toggle-container{
@@ -208,3 +246,32 @@ body{
 .container.active .toggle-right{
     transform: translateX(200%);
 }
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 100%;
+        min-height: 100vh;
+        border-radius: 0;
+    }
+
+    .toggle-container {
+        display: none;
+    }
+
+    .form-container {
+        width: 100% !important;
+        position: relative;
+    }
+
+    .container.active .sign-in {
+        display: none;
+    }
+
+    .container.active .sign-up {
+        transform: none;
+        opacity: 1;
+        z-index: 5;
+    }
+}
+
